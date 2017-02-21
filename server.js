@@ -46,20 +46,17 @@ app.get('/', function homepage(req, res) {
 
  // get all todos
 
+ app.get('/api/quotes', function index(req, res) {
+   // find all quotes in db
+   db.Quote.find({}, function (err, allQuotes) {
+     if (err) {
+       res.status(500).json({ error: err.message });
+     } else {
+       res.json({ quotes: allQuotes });
+     }
+   });
+ });
 
- // app.get('/api/todos', function index(req, res) {
- //   // find all todos in db
- //   db.Todo.find({}, function (err, allTodos) {
- //     if (err) {
- //       res.status(500).json({ error: err.message });
- //     } else {
- //       res.json({ todos: allTodos });
- //     }
- //   });
- // });
- //
- //
- //
 
 
  /**********
