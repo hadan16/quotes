@@ -44,7 +44,7 @@ app.get('/', function homepage(req, res) {
  */
 
 
- // get all todos
+ // get all quotes
 
  app.get('/api/quotes', function index(req, res) {
    // find all quotes in db
@@ -57,6 +57,20 @@ app.get('/', function homepage(req, res) {
    });
  });
 
+ // create new quote
+ app.post('/api/quotes', function create(req, res) {
+   // create new quote with form data (`req.body`)
+   var newQuote = new db.Quote(req.body);
+
+   // save new quote in db
+   newQuote.save(function(err, savedQuote) {
+     if (err) {
+       res.status(500).json({ error: err.message });
+     } else {
+       res.json(savedQuote);
+     }
+   });
+ });
 
 
  /**********

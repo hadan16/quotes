@@ -29,11 +29,8 @@ var data;
 
 // function that runs after ajax call
 function onSuccess(data){
-    console.log(data.quotes.length);
 
-
-    // BEGIN LOOPING
-
+    // Loop through todos api and append to quoteTarget
     data.quotes.forEach(function(index){
       console.log(index.phrase);
       $("#quoteTarget").append(
@@ -48,58 +45,32 @@ function onSuccess(data){
           </div>  <!-- -row-result close -->
 
           <hr>`
-
-
-
       )
     })
-  // for (var i=0; i<data.quotes.length; i++){
-  //
-  //
-  //   phrase = data.quotes[i].phrase;
-  //   author = data.quotes[i].author;
-  //
-  //   var varNewSection = `<div class="row result">
-  //
-  //           <div class="song-artist">
-  //             <h3 id="artist-${[i]}">Quote</h3>
-  //             <h4 id="track-${[i]}">Author</h4>
-  //           </div>
-  //
-  //       </div>  <!-- -row-result close -->
-  //
-  //       <hr>`;
-  //
-  //   function appendHtml(){
-  //   $(".container").append(varNewSection);
-  //   }
-  //   appendHtml();
-  //
-  //   function appendPhrase(){
-  //     $(`#artist-${i}`).text(phrase);
-  //   };
-  //   appendPhrase();
-  //
-  //   function appendAuthor(){
-  //     $(`#track-${i}`).text(author);
-  //   };
-  //   appendAuthor();
-
-
-   //end loop
-
-
-
-
-
-
-
-
-
 
 };//end onSuccess function
 
+// targerting form to create new quote
+  var $createQuote = $('#create-quote');
 
+// listen for submit event on form
+  $createQuote.on('submit', function (event) {
+    event.preventDefault();
+
+    // serialze form data
+    var newQuote = $(this).serialize();
+
+    // POST request to create new todo
+    $.ajax({
+      method: "POST", //hit up the api via a post method
+      url: `http://localhost:3000/api/quotes`, //here is the api url
+      data: newQuote, //grab the newTodo data (serialized: task=taskentry1&description=descentry2)
+
+    // reset the form
+    // $createTodo[0].reset();
+    // $createTodo.find('input').first().focus();
+    });
+  });
 
 // // helper function to render all posts to view. note: we empty and re-render the collection each time our post data changes
 // function render () {
