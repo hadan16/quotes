@@ -72,6 +72,40 @@ app.get('/', function homepage(req, res) {
    });
  });
 
+ // get one todo
+app.get('/api/quotes/:id', function show(req, res) {
+  // get todo id from url params (`req.params`)
+  var quoteId = req.params.id;
+
+  // find todo in db by id
+  db.Quote.findOne({ _id: quoteId }, function(err, foundQuote) {
+    if (err) {
+      if (err.name === "CastError") {
+        res.status(404).json({ error: "Nothing found by this ID." });
+      } else {
+        res.status(500).json({ error: err.message });
+      }
+    } else {
+      res.json(foundQuote);
+    }
+  });
+});
+
+
+ // // delete quote
+ // app.delete('/api/quotes/:id', function destroy(req, res) {
+ //   // get todo id from url params (`req.params`)
+ //   var quoteId = req.params.id;
+ //   // find todo in db by id and remove
+ //   db.Quote.findOneAndRemove({ _id: quoteId }, function (err, deletedQuote) {
+ //     if (err) {
+ //       res.status(500).json({ error: err.message });
+ //     } else {
+ //       res.json(deletedQuote);
+ //     }
+ //   });
+ // });
+
 
  /**********
   * SERVER *
