@@ -32,16 +32,14 @@ function onSuccess(data){
         console.log(index.phrase);
         $("#quoteTarget").append(
 
-            `<div>
+            `
               <h3>${index.phrase}</h3>
               <h4>${index.author}</h4>
-            </div>
-            <!-- trash can icon to delete quote, void() prevents page refresh on click -->
-                 <a href="javascript:void(0)" class="delete-quote">
-                  <span class="glyphicon glyphicon-trash"></span>
-                </a>
-
-            <hr>`
+              <a href="javascript:void(0)" class="delete-quote">
+                <span class="glyphicon glyphicon-trash" value="${index._id}">
+              </a>
+              <hr>
+            `
         )
       })
     };
@@ -81,32 +79,46 @@ function onSuccess(data){
 
 
 
-// for delete: click event on `.delete-todo` button
-  $('#quoteTarget').on('click', '.delete-quote', function (event) {
-    event.preventDefault();
+  $('#quoteTarget').hover(function() {
+      $('.glyphicon-trash').unbind().click(function() {
+        var quoteId = $(this).attr('value');
+        console.log(quoteId);
 
-    // find the todo's id (stored in HTML as `data-id`)
-    var quoteId = $(this).closest('.quote').attr('data-id');
+      // find the todo to delete by its id
+      // var quoteToDelete = allQuotes.filter(function (quote) {
+      //   return quote._id == quoteId;
+      // })[0];
 
-    // find the todo to delete by its id
-    var quote = data.quotes.filter(function (quote) {
-      return quote._id == quoteId;
-    })[0];
-
-    // DELETE request to delete todo
-    $.ajax({
+      // DELETE request to delete todo
+      $.ajax({
       type: 'DELETE',
       url: `http://localhost:3000/api/quotes` + '/' + quoteId,
-      success: function onDeleteSuccess(data) {
-        // remove deleted todo from all todos
-        allQuotes.splice(allQuotes.indexOf(quoteToDelete), 1);
+      success: function () {
+      // remove deleted todo from all todos
+      // allQuotes.splice(allQuotes.indexOf(quoteToDelete), 1);
 
-        // render all todos to view
-        // render();
-        location.reload();
-      }
-    });
+      // render all todos to view
+      location.reload();
+    }
   });
+
+
+
+
+
+
+
+      });
+  });
+
+
+
+
+
+
+
+
+
 
 
 

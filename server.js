@@ -92,19 +92,19 @@ app.get('/api/quotes/:id', function show(req, res) {
 });
 
 
- // // delete quote
- // app.delete('/api/quotes/:id', function destroy(req, res) {
- //   // get todo id from url params (`req.params`)
- //   var quoteId = req.params.id;
- //   // find todo in db by id and remove
- //   db.Quote.findOneAndRemove({ _id: quoteId }, function (err, deletedQuote) {
- //     if (err) {
- //       res.status(500).json({ error: err.message });
- //     } else {
- //       res.json(deletedQuote);
- //     }
- //   });
- // });
+ // delete quote
+ app.delete('/api/quotes/:id', function destroy(req, res) {
+   // get todo id from url params (`req.params`)
+   var quoteId = req.params.id;
+   // find todo in db by id and remove
+   db.Quote.findOneAndRemove({ _id: quoteId }, function (err, deletedQuote) {
+     if (err) {
+       res.status(500).json({ error: err.message });
+     } else {
+       res.json(deletedQuote);
+     }
+   });
+ });
 
 
  /**********
