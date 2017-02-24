@@ -92,19 +92,48 @@ app.get('/api/quotes/:id', function show(req, res) {
 });
 
 
- // delete quote
- app.delete('/api/quotes/:id', function destroy(req, res) {
+
+  // update todo
+ app.put('/api/quotes/:id', function update(req, res) {
    // get todo id from url params (`req.params`)
    var quoteId = req.params.id;
-   // find todo in db by id and remove
-   db.Quote.findOneAndRemove({ _id: quoteId }, function (err, deletedQuote) {
+
+   // find todo in db by id
+   db.Quote.findOne({ _id: quoteId }, function(err, foundQuote) {
      if (err) {
        res.status(500).json({ error: err.message });
      } else {
-       res.json(deletedQuote);
+       // update the todos's attributes
+       foundQuote.phrase = req.body.phrase;
+       foundQuote.author = req.body.author;
+       foundQuote.topic = req.body.topic;
+
+       // save updated todo in db
+       foundQuote.save(function(err, savedQuote) {
+         if (err) {
+           res.status(500).json({ error: err.message });
+         } else {
+           res.json(savedQuote);
+         }
+       });
      }
    });
  });
+
+
+  // delete quote
+  app.delete('/api/quotes/:id', function destroy(req, res) {
+    // get todo id from url params (`req.params`)
+    var quoteId = req.params.id;
+    // find todo in db by id and remove
+    db.Quote.findOneAndRemove({ _id: quoteId }, function (err, deletedQuote) {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.json(deletedQuote);
+      }
+    });
+  });
 
 
  /**********
