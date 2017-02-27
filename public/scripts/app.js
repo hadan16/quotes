@@ -11,8 +11,8 @@ $(document).on('ready', function() {
     $(function(){
      $.ajax({
        method: 'GET',
-       url: `https://fast-beach-18917.herokuapp.com/api/quotes`,
-      //  url: `http://localhost:3000/api/quotes`,
+      //  url: `https://fast-beach-18917.herokuapp.com/api/quotes`,
+       url: `http://localhost:3000/api/quotes`,
        dataType: 'json',
        success: onSuccess
      });
@@ -31,8 +31,8 @@ $(document).on('ready', function() {
           $("#quoteTarget").append(
 
               `
-                  <h3 class="quote-style">"${index.phrase}"</h3>
-                  <h4 class="quote-style">${index.author}</h4>
+                  <h4 class="quote-style">"${index.phrase}"</h4>
+                  <h5 class="quote-style">${index.author}</h5>
                 <div class="childshow">
 
                   <div class="icons">
@@ -84,7 +84,7 @@ $(document).on('ready', function() {
     // POST request to create new quote
     $.ajax({
       method: "POST", //hit up the api via a post method
-      url: `https://fast-beach-18917.herokuapp.com/api/quotes`, //here is the api url
+      url: `http://localhost:3000/api/quotes`, //here is the api url
       data: newQuote, //grab the serialized data (
                       // ie: task=taskentry1&description=descentry2)
     });
@@ -109,7 +109,7 @@ $(document).on('ready', function() {
           // DELETE request to delete quote
           $.ajax({
             type: 'DELETE',
-            url: `https://fast-beach-18917.herokuapp.com/api/quotes` + '/' + quoteId,
+            url: `http://localhost:3000/api/quotes` + '/' + quoteId,
             success: function () {
               // render (render function requires handlebars)all quote to view
               location.reload();
@@ -145,7 +145,7 @@ $(document).on('ready', function() {
         // PUT request to update quote
         $.ajax({
           type: 'PUT',
-          url: `https://fast-beach-18917.herokuapp.com/api/quotes` + '/' + quoteId2,
+          url: `http://localhost:3000/api/quotes` + '/' + quoteId2,
           data: updatedQuote,
           success: function onUpdateSuccess() {
 
