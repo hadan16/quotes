@@ -5,9 +5,7 @@
   "main": "seed.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-  "engines": {
-    "node": "6.10.0"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
