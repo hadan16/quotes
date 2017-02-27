@@ -31,7 +31,6 @@ $(document).on('ready', function() {
           $("#quoteTarget").append(
 
               `
-                <h1>Can you see me, Heroku?</h1>
                   <h3 class="quote-style">"${index.phrase}"</h3>
                   <h4 class="quote-style">${index.author}</h4>
                 <div class="childshow">
