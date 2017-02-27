@@ -85,7 +85,8 @@ $(document).on('ready', function() {
     $.ajax({
       method: "POST", //hit up the api via a post method
       // url: `https://fast-beach-18917.herokuapp.com/api/quotes`, //here is the api url
-      url: `http://localhost:3000/api/quotes`, //here is the api url
+      // url: `http://localhost:3000/api/quotes`, //here is the api url
+      url: `https://fast-beach-18917.herokuapp.com/api/quotes`,
       data: newQuote, //grab the serialized data (
                       // ie: task=taskentry1&description=descentry2)
     });
