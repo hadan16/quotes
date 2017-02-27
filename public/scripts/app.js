@@ -11,8 +11,8 @@ $(document).on('ready', function() {
     $(function(){
      $.ajax({
        method: 'GET',
-      //  url: `https://fast-beach-18917.herokuapp.com/api/quotes`,
-       url: `http://localhost:3000/api/quotes`,
+       url: `https://fast-beach-18917.herokuapp.com/api/quotes`,
+      //  url: `http://localhost:3000/api/quotes`,
        dataType: 'json',
        success: onSuccess
      });
@@ -110,8 +110,8 @@ $(document).on('ready', function() {
           // DELETE request to delete quote
           $.ajax({
             type: 'DELETE',
-            // url: `https://fast-beach-18917.herokuapp.com/api/quotes` + '/' + quoteId,
-            url: `http://localhost:3000/api/quotes` + '/' + quoteId,
+            url: `https://fast-beach-18917.herokuapp.com/api/quotes` + '/' + quoteId,
+            // url: `http://localhost:3000/api/quotes` + '/' + quoteId,
             success: function () {
               // render (render function requires handlebars)all quote to view
               location.reload();
@@ -147,8 +147,8 @@ $(document).on('ready', function() {
         // PUT request to update quote
         $.ajax({
           type: 'PUT',
-          url: `http://localhost:3000/api/quotes` + '/' + quoteId2,
-          // url: `https://fast-beach-18917.herokuapp.com/api/quotes` + '/' + quoteId2,
+          // url: `http://localhost:3000/api/quotes` + '/' + quoteId2,
+          url: `https://fast-beach-18917.herokuapp.com/api/quotes` + '/' + quoteId2,
           data: updatedQuote,
           success: function onUpdateSuccess() {
 
