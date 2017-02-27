@@ -22,3 +22,7 @@
   font-family: 'Libre Franklin', sans-serif;
   /*font-style: italic;*/
 }
+
+#quoteTarget{
+  clear:both;
+}
