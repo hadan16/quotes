@@ -1,0 +1,24 @@
+
+
+.childshow-content{
+  display:none;
+}
+
+.icons{
+  float:right;
+  margin-top: -28px;
+}
+
+.new-quote-form{
+  float:left;
+  margin: 8px;
+}
+
+#submit-button{
+  margin-top: 7px;
+}
+
+.quote-style{
+  font-family: 'Libre Franklin', sans-serif;
+  /*font-style: italic;*/
+}

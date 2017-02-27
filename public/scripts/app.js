@@ -4,8 +4,8 @@ $(document).on('ready', function() {
     // js link check
     console.log("app.js linked.");
 
-    //focus on first form field
-    $('#create-quote').find('input').first().focus();
+    // //focus on first form field
+    // $('#create-quote').find('input').first().focus();
 
 //SHOW ALL QUOTES
     $(function(){
@@ -30,31 +30,35 @@ $(document).on('ready', function() {
           $("#quoteTarget").append(
 
               `
-                <h3>${index.phrase}</h3>
-                <h4>${index.author}</h4>
-                <a href="javascript:void(0)" class="delete-quote">
-                  <span class="glyphicon glyphicon-trash" value="${index._id}">
-                </a>
-                <a href="javascript:void(0)" class="update-quote">
-                  <span class="glyphicon glyphicon-pencil" value="${index._id}">
-                </a>
+                  <h3 class="quote-style">"${index.phrase}"</h3>
+                  <h4 class="quote-style">${index.author}</h4>
+                <div class="childshow">
 
-                <div>
-                  <br>
-                  <form class="form-toggle" id="update-quote-form">
-                    <div class="form-group">
-                      <input type="text" name="phrase" class="form-control" placeholder="${index.phrase}">
+                  <div class="icons">
+                    <a href="javascript:void(0)" class="delete-quote">
+                      <span class="glyphicon glyphicon-trash" value="${index._id}">
+                    </a>
+                    <a href="javascript:void(0)" class="update-quote">
+                      <span class="glyphicon glyphicon-pencil childshow" value="${index._id}">
+                    </a>
+                  </div>
+
+                    <div class='childshow childshow-content'>
+                      <form id="update-quote-form">
+                        <div class="form-group">
+                          <input type="text" name="phrase" class="form-control" placeholder="${index.phrase}">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="author" class="form-control" placeholder="${index.author}">
+                        </div>
+                        <div class="form-group">
+                          <input class="temp" type="submit" value="Update" name="${index._id}">
+                        </div>
+                      </form>
                     </div>
-                    <div class="form-group">
-                      <input type="text" name="author" class="form-control" placeholder="${index.author}">
-                    </div>
-                    <div class="form-group">
-                      <input class="temp" type="submit" value="submit change" name="${index._id}">
-                    </div>
-                  </form>
+                    <hr>
                 </div>
 
-                <hr>
               `
           )
         })
@@ -169,17 +173,12 @@ $(document).on('ready', function() {
 
 
 
-// NEXT STEPS: Toggling select edit fields.. need to apply unique class using existing forEach function to each form
-// and then targeting it to toggle witch the click
-  // $('#quoteTarget').hover(function() {
-  //     $('.glyphicon-trash').unbind().click(function() { //unbind because it mysteriousuly returned multiple attributes, only needed one
-  //       var quoteClass = $(this).attr('class'); //set the trash can or buttons value (set to _id in html) to = quoteId
-  //       console.log(quoteClass);
-  //       console.log("quoteClass");
-  //
-  //     });
-  // });
-  //
+// TOGGLE FORM EDIT
+    $("#quoteTarget").on("click", ".childshow",function (e) {
+        $(this).children('.childshow').toggle();
+        $('.form-group').click(false);
+    });
+
 
 
 

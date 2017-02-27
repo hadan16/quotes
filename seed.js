@@ -8,20 +8,38 @@ Quote.create()
 
 var quotes_list = [
   {
-    phrase: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    topic: "Life"
+    phrase: "Your hustle muscle is the most important thing. If you're not hustling, you're worrying.",
+    author: "Jamie Foxx",
   },
   {
-    phrase: "To Kill a Mockingbird 2",
-    author: "Harper Lee 2",
-    topic: "Life 2"
+    phrase: "Don't let the noise of others' opinions drown out your inner voice. Have the courage to follow your own heart and intuition.",
+    author: "Steve Jobs",
   },
   {
-    phrase: "To Kill a Mockingbird 3",
-    author: "Harper Lee 3",
-    topic: "Life 3"
-  }
+    phrase: "Suffer the pain of discipline or suffer the pain of regret.",
+    author: "Jim Rohn",
+  },
+  {
+    phrase: "There, in the stillness, a treasure trove of beauty.",
+    author: "Dewitt Jones",
+  },
+  {
+    phrase: "When good things happen to us, we have a way of baking them into our expectations very quickly, and taking them for granted. In this way, the pursuit of happiness becomes the source of our unhappiness.",
+    author: "Dan Harris",
+  },
+  {
+    phrase: "If we could see the miracle of a single flower, our whole life would change. Assignment: today, look for the miracles and really see them.",
+    author: "Jack Kornfield",
+  },
+  {
+    phrase: "There's nothing wrong with change, as long as its in the right direction.",
+    author: "Unknown",
+  },
+  {
+    phrase: "Decide that you want it more than you are afraid of it.",
+    author: "Bill Cosby",
+  },
+
 ];
 
 // remove all records that match {} -- which means remove ALL records

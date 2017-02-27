@@ -8,6 +8,8 @@
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+  <!-- custom font -->
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
 
   <title>Quotes</title>
 
@@ -18,15 +20,19 @@
 <body>
   <!-- bootstrap container -->
   <div class="container">
-    <h1>Quotes</h1>
+    <h1 style ="font-weight: 600" class="quote-style">Quotes</h1>
     <!-- Quote intake form -->
     <form id="create-quote">
-      <label>Enter Quote</label>
-      <input type="text" name="phrase">
-      <label>Enter Author</label>
-      <input type="text" name="author">
-      <label>Enter Topic</label>
-      <input type="text" name="topic">
+      <div class="new-quote-form">
+        <label>Enter Quote</label>
+        <input type="text" name="phrase">
+      </div>
+      <div class="new-quote-form">
+        <label>Enter Author</label>
+        <input type="text" name="author">
+      </div>
+      <!-- <label>Enter Topic</label>
+      <input type="text" name="topic"> -->
       <button type="submit" id="submit-button">Submit</button>
     </form>
 
