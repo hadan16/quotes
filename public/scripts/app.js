@@ -181,11 +181,15 @@ $(document).on('ready', function() {
 
 
 // TOGGLE FORM EDIT
-    $("#quoteTarget").on("click", ".childshow",function (e) {
-        $(this).children('.childshow').toggle();
-        $('.form-group').click(false);
-    });
+  $("#quoteTarget").on("click", ".childshow",function (e) {
+      $(this).children('.childshow').toggle();
+      $('.form-group').click(false);
+  });
 
+// AUTOFOCUS FORM IN modal-body
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+  })
 
 
 

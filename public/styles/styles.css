@@ -1,13 +1,26 @@
+.container{
+  margin-top: 18px;
+  background-color: white;
+}
 
 header{
-  /*background-color: #f8f9f9;*/
-  background-color: lightblue;
+  background-color: #f8f9f9;
+}
 
+.wrap {
+  max-width: 1207px;
+  margin: 0 auto;
+  padding: 15px 33px;
+  display: flex;
 }
 
 h1 {
-  max-width: 800px;
-  margin-left:63px;
+  font-family: 'Average', serif;
+  font-weight: 400;
+  font-size: 56px;
+  color: #007090;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .childshow-content{
@@ -16,26 +29,46 @@ h1 {
 
 .icons{
   float:right;
-  margin-top: -28px;
+  margin-top: -46px;
+  font-size: 18px;
 }
 
-.new-quote-form{
-  float:left;
-  margin: 8px;
+#create-quote{
+  margin: 15px 0;
 }
 
-#submit-button{
-  margin-top: 7px;
+.modal-body{
+   margin-top: -21px;
+}
+
+.add-quote-button{
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 50px;
+  color: rgb(0, 112, 144);
+}
+
+.input-field{
+  width: 567px;
+  height: 33px;
+  background-color: lightgrey;
+  border-radius: 4px;
+  font-size: 26px;
 }
 
 .quote-style{
-  font-family: 'Libre Franklin', sans-serif;
-  /*font-style: italic;*/
+  font-size: 27px;
+  line-height: 33px;
+  font-family: 'Average', serif;
+  font-style: italic;
 }
 
 .author-style{
-  font-family: 'Libre Franklin', sans-serif;
-  font-style: italic;
+  font-size: 27px;
+  line-height: 33px;
+  font-family: 'Average', serif;
+  color: black;
 }
 
 #quoteTarget{

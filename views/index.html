@@ -10,7 +10,7 @@
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
   <!-- custom font -->
-  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Average" rel="stylesheet">
 
   <title>Quotes</title>
 
@@ -21,35 +21,54 @@
 <body>
   <!-- header outside of container for full width gray background -->
   <header>
-    <h1 style ="font-weight: 600" class="quote-style">Quotes</h1>
+    <div class="wrap">
+      <h1>Quotes</h1>
+      <!-- add quote plus glyphicon modal "link" -->
+      <a class="add-quote-button" data-toggle="modal" data-target=".bs-example-modal-lg" style="text-decoration:none; cursor: pointer;">+</a>
+    </div>
+
   </header>
   <!-- bootstrap container -->
   <div class="container">
-    <!-- Quote intake form -->
-    <form id="create-quote">
-      <div class="new-quote-form">
-        <label>Enter Quote</label>
-        <input type="text" name="phrase">
-      </div>
-      <div class="new-quote-form">
-        <label>Enter Author</label>
-        <input type="text" name="author">
-      </div>
-      <!-- <label>Enter Topic</label>
-      <input type="text" name="topic"> -->
-      <button type="submit" id="submit-button">Submit</button>
-    </form>
-
     <!-- This is where the quote api is displayed -->
-    <div id='quoteTarget'></div>
-
-
-
-
-
+    <div id='quoteTarget'><!-- dynamically rendered content from app.js here --></div>
   </div>  <!-- bootstrap container close -->
+
+  <!-- modal window for add new quote -->
+
+
+  <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Quote</h4>
+      </div>
+      <form class="new-quote-form" id="create-quote">
+        <div class="modal-body">
+          <div>Quote:</div>
+          <div>
+            <input class="input-field" style="width: 567px" type="text" name="phrase" id="myInput">
+          </div>
+          <div style="margin-top:15px">Author:</div>
+          <div>
+            <input class="input-field" type="text" name="author">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button submit" class="btn btn-primary" id="submit-button">Submit</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 </body>
 
