@@ -82,3 +82,38 @@ blockquote {
     margin-left: auto;
     margin-right: auto;
 }
+
+/*iphone 6 plus and smaller*/
+@media screen and (max-width: 414px) {
+  h1{
+    font-size:30px;
+  }
+
+  .blockquote{
+    padding: 0px;
+  }
+
+  .quote-style, .author-style {
+    font-size: 17px;
+  }
+
+  .input-field{
+    width: 100%;
+    height: 33px;
+    background-color: lightgrey;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .wrap {
+    padding: 0px 33px;
+  }
+
+  .add-quote-button {
+    font-size: 33px;
+  }
+
+  .icons {
+    font-size: 14px;
+  }
+}
