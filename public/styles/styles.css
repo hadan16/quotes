@@ -26,3 +26,5 @@
 #quoteTarget{
   clear:both;
 }
+
+@font-face {font-family: 'CallunaSans-Regular';src: url('webfonts/334A29_0_0.eot');src: url('webfonts/334A29_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/334A29_0_0.woff2') format('woff2'),url('webfonts/334A29_0_0.woff') format('woff'),url('webfonts/334A29_0_0.ttf') format('truetype');}
