@@ -31,10 +31,12 @@ $(document).on('ready', function() {
           $("#quoteTarget").append(
 
               `
+                <blockquote>
                   <h4 class="quote-style">"${index.phrase}"</h4>
-                  <h5 class="quote-style">${index.author}</h5>
-                <div class="childshow">
+                  <h5 class="author-style">- ${index.author}</h5>
+                </blockquote>
 
+                <div class="childshow">
                   <div class="icons">
                     <a href="javascript:void(0)" class="delete-quote">
                       <span class="glyphicon glyphicon-trash" value="${index._id}">

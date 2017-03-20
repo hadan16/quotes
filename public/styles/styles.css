@@ -1,4 +1,14 @@
 
+header{
+  /*background-color: #f8f9f9;*/
+  background-color: lightblue;
+
+}
+
+h1 {
+  max-width: 800px;
+  margin-left:63px;
+}
 
 .childshow-content{
   display:none;
@@ -23,8 +33,19 @@
   /*font-style: italic;*/
 }
 
+.author-style{
+  font-family: 'Libre Franklin', sans-serif;
+  font-style: italic;
+}
+
 #quoteTarget{
   clear:both;
 }
 
-@font-face {font-family: 'CallunaSans-Regular';src: url('webfonts/334A29_0_0.eot');src: url('webfonts/334A29_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/334A29_0_0.woff2') format('woff2'),url('webfonts/334A29_0_0.woff') format('woff'),url('webfonts/334A29_0_0.ttf') format('truetype');}
+blockquote {
+    color: rgba(0,0,0,0.6);
+    padding-left: 1rem;
+    border-left: 4px solid rgba(0,50,100,0.15);
+    margin-left: auto;
+    margin-right: auto;
+}

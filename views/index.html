@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
   <!-- set viewport to device width to help make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- bootstrap css -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
   <!-- custom font -->
@@ -18,9 +19,12 @@
 
 </head>
 <body>
+  <!-- header outside of container for full width gray background -->
+  <header>
+    <h1 style ="font-weight: 600" class="quote-style">Quotes</h1>
+  </header>
   <!-- bootstrap container -->
   <div class="container">
-    <h1 style ="font-weight: 600" class="quote-style">Quotes</h1>
     <!-- Quote intake form -->
     <form id="create-quote">
       <div class="new-quote-form">
@@ -46,7 +50,6 @@
   </div>  <!-- bootstrap container close -->
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 </body>
 

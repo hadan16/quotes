@@ -39,6 +39,10 @@ var quotes_list = [
     phrase: "Decide that you want it more than you are afraid of it.",
     author: "Bill Cosby",
   },
+  {
+    phrase: "Fall forward.",
+    author: "Denzel Washington",
+  },
 
 ];
 
