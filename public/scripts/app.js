@@ -59,7 +59,7 @@ $(document).on('ready', function() {
                         </div>
                       </form>
                     </div>
-                    <hr>
+                    <hr class="style">
                 </div>
 
               `

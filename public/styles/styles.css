@@ -74,10 +74,20 @@ h1 {
 }
 
 blockquote {
-    color: rgba(0,0,0,0.6);
-    border-left: 2px solid rgba(0,50,100,0.15);
-    margin: 2px 42px;
-    padding: 0px 20px;
+  color: rgba(0,0,0,0.6);
+  border-left: 2px solid rgba(0,50,100,0.15);
+  margin: 2px 42px;
+  padding: 0px 20px;
+}
+
+hr.style {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #ffffff, #e4e2e2, #ffffff);
+  background-image: -webkit-linear-gradient(left, #ffffff, #e4e2e2, #ffffff);
+  background-image: -moz-linear-gradient(left, #ffffff, #e4e2e2, #ffffff);
+  background-image: -ms-linear-gradient(left, #ffffff, #e4e2e2, #ffffff);
+  background-image: -o-linear-gradient(left, #ffffff, #e4e2e2, #ffffff);
 }
 
 /*iphone 6 plus and smaller*/
